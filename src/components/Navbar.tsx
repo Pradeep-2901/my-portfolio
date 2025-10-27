@@ -1,11 +1,23 @@
 import React from 'react';
-// We'll add new icons here for the next step!
-import { FaCode, FaMoon, FaUser, FaTools, FaLaptopCode, FaBriefcase, FaAward } from 'react-icons/fa';
+import { FaCode, FaMoon, FaUser, FaTools, FaLaptopCode, FaBriefcase, FaAward, FaRegCommentDots } from 'react-icons/fa';
 
 const Navbar: React.FC = () => {
   return (
-    <nav className="fixed w-full top-0 left-0 p-4 bg-slate-900 text-white border-b border-slate-700 z-50">
-      <div className="container mx-auto flex justify-between items-center max-w-7xl"> {/* Added max-w-7xl and mx-auto */}
+    
+    /* I've moved the comments out! The className prop needs to be 
+      one continuous string.
+    */
+    <nav className="
+      sticky top-0 z-50 
+      mt-8 rounded-xl 
+      p-4 text-white
+      bg-slate-900/70 
+      backdrop-blur-lg 
+      ring-1 ring-white/10
+    ">
+      
+      {/* Main container inside nav */}
+      <div className="flex justify-between items-center">
         
         {/* Left: Brand */}
         <div className="flex items-center gap-2">
@@ -13,9 +25,8 @@ const Navbar: React.FC = () => {
           <span className="text-xl font-bold text-slate-100">Pradeep Behera</span>
         </div>
 
-        {/* Center: Links (NOW WITH MORE LINKS & ICONS) */}
+        {/* Center: Links */}
         <div className="hidden md:flex items-center gap-6">
-          {/* Note: DevPatel's Home is text, others are icons. We'll add icons for the others. */}
           <a href="#home" className="text-slate-300 hover:text-lime-400 transition-colors flex items-center gap-1">
             Home
           </a>
@@ -31,8 +42,8 @@ const Navbar: React.FC = () => {
           <a href="#experience" className="text-slate-300 hover:text-lime-400 transition-colors flex items-center gap-1">
             <FaBriefcase size={16} /> Experience
           </a>
-          <a href="#achievements" className="text-slate-300 hover:text-lime-400 transition-colors flex items-center gap-1">
-            <FaAward size={16} /> Achievements
+          <a href="#contact" className="text-slate-300 hover:text-lime-400 transition-colors flex items-center gap-1">
+            <FaRegCommentDots size={16} /> Contact
           </a>
         </div>
 
