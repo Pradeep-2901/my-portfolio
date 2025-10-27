@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  /* 1. Set the image as the background */
+  background-image: url('assets/background.jpg');
+
+  /* 2. Make it cover the entire screen */
+  background-size: cover;
+
+  /* 3. Center the image */
+  background-position: center;
+
+  /* 4. Stop it from repeating if the screen is huge */
+  background-repeat: no-repeat;
+
+  /* 5. (Optional but recommended) Fix the background so it doesn't scroll with the content */
+  background-attachment: fixed;
+
+  /* 6. A fallback color in case the image fails to load */
+  background-color: #0f172a; 
+}

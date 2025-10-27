@@ -1,14 +1,22 @@
-import './App.css'
+import './App.css';
+import Navbar from './components/Navbar';
 
 function App() {
-
   return (
-    <div className="flex h-screen w-full items-center justify-center bg-gray-900">
-      <h1 className="text-3xl font-bold text-white">
-        Hello, World! My portfolio starts today.
-      </h1>
+    // We replaced "bg-slate-900" with our new radial gradient class:
+    <div className="min-h-screen">
+      
+      <Navbar />
+
+      <div className="pt-20 text-center text-white">
+        <h1 className="text-3xl font-bold">
+          My Styled Navbar is Working!
+        </h1>
+        <p className="text-slate-300">This content is below the navbar.</p>
+      </div>
+
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
