@@ -3,21 +3,30 @@
 @tailwind utilities;
 
 body {
-  /* 1. Set the image as the background */
-  background-image: url('assets/background.jpg');
+  /* A dark fallback color */
+  background-color: #000; 
 
-  /* 2. Make it cover the entire screen */
-  background-size: cover;
+  /*
+    This is the new colorful gradient:
+    - It starts at the top with a dark purple (indigo-950).
+    - It blends into a dark blue (blue-950).
+    - It fades to pure black (#000) at the 70% edge.
+  */
+  background-image: radial-gradient(
+    ellipse at top,
+    rgb(30, 27, 45),  /* Dark Purple */
+    rgb(23, 37, 84),  /* Dark Blue */
+    #000 70%         /* Pure Black */
+  );
+  
+  /* Ensures the gradient always fills the whole screen */
+  min-height: 100vh;
+}
 
-  /* 3. Center the image */
-  background-position: center;
-
-  /* 4. Stop it from repeating if the screen is huge */
-  background-repeat: no-repeat;
-
-  /* 5. (Optional but recommended) Fix the background so it doesn't scroll with the content */
-  background-attachment: fixed;
-
-  /* 6. A fallback color in case the image fails to load */
-  background-color: #0f172a; 
+  /* This finds any 'span' inside a link with the 'active' class
+  and scales it to 100%. This is what keeps the underline
+  visible on the currently scrolled-to section.
+*/
+.nav-link.active span {
+  transform: scaleX(1);
 }

@@ -3,24 +3,19 @@ import Navbar from './components/Navbar';
 
 function App() {
   return (
-    /* HERE IS THE FIX:
-      - REMOVED: 'bg-slate-900' from this div.
-      - KEPT: 'min-h-screen' and 'text-slate-100' (to set default text color)
-      Now, your background from index.css will be visible.
-    */
+    // 1. Make SURE id="home" is REMOVED from this div
     <div className="min-h-screen text-slate-100">
       
-      {/* This container still centers everything */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* This navbar has its own 'mt-8' and glass background */}
+        {/* Your navbar (with mt-0) */}
         <Navbar />
 
-        {/* This main content has 'mt-8' to create the gap */}
+        {/* You mentioned you reduced the gap, so we'll use mt-8 here */}
         <main className="mt-8">
           
-          {/* Your placeholder card. We'll make this dark later. */}
-          <div className="h-[1000px] bg-slate-800 rounded-xl p-8 mb-8">
+          {/* 2. Make SURE id="home" is ADDED to this hero card div */}
+          <div id="home" className="h-[1000px] bg-slate-800 rounded-xl p-8 mb-8">
             <h1 className="text-3xl font-bold text-lime-400">
               Future Hero Section (Placeholder)
             </h1>
@@ -29,8 +24,7 @@ function App() {
             </p>
           </div>
           
-          {/* Future content */}
-          <div className="h-[1000px] bg-slate-800 rounded-xl p-8">
+          <div id="about" className="h-[1000px] bg-slate-800 rounded-xl p-8">
             <h1 className="text-3xl font-bold text-lime-400">
               Future About Section (Placeholder)
             </h1>
