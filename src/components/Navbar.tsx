@@ -60,17 +60,6 @@ const Navbar: React.FC = () => {
           </Link>
 
           <Link 
-            to="services" spy={true} smooth={true} offset={-100} duration={500} 
-            activeClass="active"
-            className="nav-link text-slate-300 hover:text-lime-400 transition-colors flex items-center gap-2 relative group cursor-pointer"
-          >
-            <FaTools size={20} /> Services
-            <span className="absolute bottom-[-4px] left-0 w-full h-[2px] bg-lime-400 
-                             transform scale-x-0 group-hover:scale-x-100 origin-center
-                             transition-transform duration-300 ease-out"></span>
-          </Link>
-
-          <Link 
             to="projects" spy={true} smooth={true} offset={-100} duration={500} 
             activeClass="active"
             className="nav-link text-slate-300 hover:text-lime-400 transition-colors flex items-center gap-2 relative group cursor-pointer"

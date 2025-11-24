@@ -4,8 +4,12 @@ import { TypeAnimation } from 'react-type-animation';
 // 2. IMPORT SOCIAL ICONS
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
+// 3. IMPORT THE WORK EXPERIENCE COMPONENT (This was missing!)
+import WorkExperience from './WorkExperience';
+
 // UNCOMMENT THIS WHEN READY
 import profilePic from '../assets/profile.png';
+
 const Hero: React.FC = () => {
   return (
     <section id="home" className="grid md:grid-cols-12 lg:grid-cols-12 gap-8 py-8">
@@ -50,8 +54,7 @@ const Hero: React.FC = () => {
             Full-stack Developer
             </p>
 
-{/* === 3. TYPEWRITER EFFECT === */}
-            {/* ADDED: font-medium */}
+            {/* Typewriter Effect */}
             <div className="mt-6 min-h-[100px] text-slate-300 leading-relaxed text-lg font-medium">
               <TypeAnimation
                 sequence={[
@@ -65,18 +68,15 @@ const Hero: React.FC = () => {
               />
             </div>
 
-            {/* Main Action Buttons */}
-            <div className="flex gap-4 mt-8 w-full">
+            {/* === ACTION ROW === */}
+            <div className="flex items-center gap-3 mt-8 w-full">
+              
+              {/* 1. Download CV Button */}
               <button className="flex-1 bg-lime-400 text-slate-900 font-bold py-3 px-6 rounded-lg hover:bg-lime-300 transition-all shadow-[0_0_20px_rgba(163,230,53,0.3)]">
                   Download CV
               </button>
-              <button className="flex-1 border border-slate-600 text-slate-300 font-bold py-3 px-6 rounded-lg hover:border-lime-400 hover:text-lime-400 transition-all bg-slate-900/50">
-                  Let's Talk
-              </button>
-            </div>
 
-            {/* === 4. SOCIAL LINKS ROW === */}
-            <div className="flex gap-4 mt-6 w-full">
+              {/* 2. GitHub Icon */}
               <a 
                 href="https://github.com/Pradeep-2901" 
                 target="_blank" 
@@ -85,6 +85,8 @@ const Hero: React.FC = () => {
               >
                 <FaGithub size={24} />
               </a>
+
+              {/* 3. LinkedIn Icon */}
               <a 
                 href="https://linkedin.com/in/pradeepbehera2901" 
                 target="_blank" 
@@ -96,14 +98,14 @@ const Hero: React.FC = () => {
             </div>
 
         </div>
-
       </div>
 
-      {/* RIGHT COLUMN: Placeholders (Unchanged) */}
+      {/* RIGHT COLUMN: Work Experience & Expert Area */}
       <div className="md:col-span-7 lg:col-span-7 flex flex-col gap-6">
-        <div className="bg-slate-900 border border-white/5 backdrop-blur-sm rounded-2xl p-8 h-48 shadow-lg flex items-center justify-center text-slate-400 text-2xl">
-          Work Experience (Coming Soon)
-        </div>
+        
+        {/* Work Experience Component */}
+        <WorkExperience />
+        
         <div className="bg-slate-900 border border-white/5 backdrop-blur-sm rounded-2xl p-8 h-48 shadow-lg flex items-center justify-center text-slate-400 text-2xl">
           My Expert Area (Coming Soon)
         </div>
