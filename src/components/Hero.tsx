@@ -1,4 +1,5 @@
 import React from 'react';
+import ClickSpark from './ClickSpark';
 // 1. IMPORT THE ANIMATION LIBRARY
 import { TypeAnimation } from 'react-type-animation';
 // 2. IMPORT SOCIAL ICONS
@@ -7,12 +8,14 @@ import { FaGithub, FaLinkedin } from 'react-icons/fa';
 // 3. IMPORT THE WORK EXPERIENCE COMPONENT (This was missing!)
 import WorkExperience from './WorkExperience';
 
+import ExpertArea from './ExpertArea';
+
 // UNCOMMENT THIS WHEN READY
 import profilePic from '../assets/profile.png';
 
 const Hero: React.FC = () => {
   return (
-    <section id="home" className="grid md:grid-cols-12 lg:grid-cols-12 gap-8 py-8">
+    <section id="home" className="grid md:grid-cols-12 lg:grid-cols-12 gap-8 py-8 items-stretch">
       
       {/* LEFT COLUMN: Profile Card */}
       <div className="md:col-span-5 lg:col-span-5 
@@ -68,10 +71,11 @@ const Hero: React.FC = () => {
               />
             </div>
 
-            {/* === ACTION ROW === */}
+            {/* === NEW MERGED ACTION ROW === */}
             <div className="flex items-center gap-3 mt-8 w-full">
               
-              {/* 1. Download CV Button */}
+              {/* 1. Download CV (Primary Action) */}
+              {/* Removed <ClickSpark> wrapper from here */}
               <button className="flex-1 bg-lime-400 text-slate-900 font-bold py-3 px-6 rounded-lg hover:bg-lime-300 transition-all shadow-[0_0_20px_rgba(163,230,53,0.3)]">
                   Download CV
               </button>
@@ -101,14 +105,18 @@ const Hero: React.FC = () => {
       </div>
 
       {/* RIGHT COLUMN: Work Experience & Expert Area */}
-      <div className="md:col-span-7 lg:col-span-7 flex flex-col gap-6">
+      <div className="md:col-span-7 lg:col-span-7 flex flex-col gap-6 h-full">
         
-        {/* Work Experience Component */}
-        <WorkExperience />
-        
-        <div className="bg-slate-900 border border-white/5 backdrop-blur-sm rounded-2xl p-8 h-48 shadow-lg flex items-center justify-center text-slate-400 text-2xl">
-          My Expert Area (Coming Soon)
+       {/* Work Experience (Fixed height) */}
+        <div className="shrink-0">
+            <WorkExperience />
         </div>
+        
+        {/* 3. Expert Area (Takes remaining height) */}
+        {/* flex-1 ensures this card expands to match the Left Column's bottom */}
+        <ExpertArea />
+
+
       </div>
 
     </section>

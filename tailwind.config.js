@@ -6,16 +6,26 @@ export default {
   ],
   theme: {
     extend: {
-      // 1. Define the Keyframes for moving up
       keyframes: {
         'vertical-scroll': {
           from: { transform: 'translateY(0)' },
-          to: { transform: 'translateY(-50%)' }, // Moves exactly half the height (the duplicate set)
+          to: { transform: 'translateY(-50%)' },
+        },
+        // NEW: Horizontal Scrolls
+        'scroll-left': {
+          from: { transform: 'translateX(0)' },
+          to: { transform: 'translateX(-50%)' },
+        },
+        'scroll-right': {
+          from: { transform: 'translateX(-50%)' },
+          to: { transform: 'translateX(0)' },
         },
       },
-      // 2. Define the Animation utility class
       animation: {
-        'vertical-scroll': 'vertical-scroll 12s linear infinite', // 50s speed, loops forever
+        'vertical-scroll': 'vertical-scroll 14s linear infinite',
+        // NEW: Horizontal Animations
+        'scroll-left': 'scroll-left 40s linear infinite',
+        'scroll-right': 'scroll-right 40s linear infinite',
       },
     },
   },

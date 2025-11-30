@@ -1,21 +1,29 @@
 import './App.css';
 import Navbar from './components/Navbar';
-import Hero from './components/Hero'; // Import the new Hero component
+import Hero from './components/Hero';
+import ClickSpark from './components/ClickSpark'; // Import it here
 
 function App() {
   return (
-    <div className="min-h-screen text-slate-100">
+    // Wrap the entire application in ClickSpark
+    // We move the 'min-h-screen' and 'text-slate-100' classes here
+    <ClickSpark
+      sparkColor='#a3e635'
+      sparkSize={10}
+      sparkRadius={20}
+      sparkCount={8}
+      duration={400}
+      className="min-h-screen text-slate-100"
+    >
+      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <Navbar />
 
-        {/* Removed mt-8 from main, as the Hero section itself will create its own top spacing */}
         <main>
-          {/* Render your Hero component here */}
           <Hero />
 
-          {/* This is your "About" section placeholder, which will remain for now */}
-          <div id="about" className="h-[1000px] bg-slate-800 rounded-xl p-8 mt-8">
+          <div id="about" className="h-[1000px] bg-slate-900 rounded-xl p-8 mt-8">
             <h1 className="text-3xl font-bold text-lime-400">
               Future About Section (Placeholder)
             </h1>
@@ -23,7 +31,7 @@ function App() {
         </main>
 
       </div>
-    </div>
+    </ClickSpark>
   );
 }
 
